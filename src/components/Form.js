@@ -26,6 +26,7 @@ const Form = ({
     <form onSubmit={(event) => handleSubmit(event)}>
       <label htmlFor="name">Name</label>
       <input
+        required
         type="text"
         name="name"
         id="name"
@@ -36,6 +37,7 @@ const Form = ({
 
       <label htmlFor="email">Email</label>
       <input
+        required
         type="email"
         name="email"
         id="email"
@@ -47,7 +49,8 @@ const Form = ({
       <label htmlFor="password">Password</label>
       <div>
         <input
-          className={isValid && "error"}
+          required
+          className={isValid ? "error" : undefined}
           type={!show ? "password" : "text"}
           name="password"
           id="password"
@@ -60,7 +63,7 @@ const Form = ({
       <label htmlFor="confirmPassword">Confirm your password</label>
       <div>
         <input
-          className={isValid && "error"}
+          className={isValid ? "error" : undefined}
           type={!show ? "password" : "text"}
           name="confirmPassword"
           id="confirmPassword"

@@ -1,11 +1,29 @@
-import "./App.css";
+import "./assets/css/App.css";
+import Footer from "./components/Footer";
+import Form from "./components/Form";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
+    <div className="App">
+      <Form
+        name={name}
+        email={email}
+        password={password}
+        confirmPassword={confirmPassword}
+        setName={setName}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setConfirmPassword={setConfirmPassword}
+      />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

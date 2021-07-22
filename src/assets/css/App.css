@@ -12,6 +12,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    margin: auto;
 }
 h1{
     font-size: 45px;
@@ -35,6 +37,14 @@ form input {
     margin: 5px 0 25px;
 }
 
+.fa-eye {
+    position: relative;
+    z-index: 1;
+    left: -30px;
+    color: #7b7b7b;
+    cursor: pointer;
+}
+
 form > label {
     font-size: 12px;
 }
@@ -43,7 +53,15 @@ form > label {
     cursor: pointer;
 }
 
-.back-button, .submit-button {
+.edit-button {
+    width: 250px;
+    outline: none;
+    height: 45px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.edit-button, .submit-button {
     color: #fff;
     background-color: #5c47d3;
     border: 1px solid #5c47d3;
@@ -52,6 +70,57 @@ form > label {
     margin-top: 20px;
 }
 
+/* Error */
+.error {
+    border: 1px solid red;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+/* Result */
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result > div {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: rgb(238, 234, 234);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.result > div > span:not(:last-child) {
+    margin-bottom: 20px;
+}
 /* Footer */
 footer {
     margin-top: 100px;
@@ -65,7 +134,7 @@ footer {
 footer span {
     font-weight: bold;
 }
-
+  
 /* MEDIA QUERIES  */
 
 /* ----------- */

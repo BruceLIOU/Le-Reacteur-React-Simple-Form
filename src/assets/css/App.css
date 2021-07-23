@@ -46,6 +46,9 @@ form input:focus {
     color: #7b7b7b;
     cursor: pointer;
 }
+.fa-eye:hover, .fa-eye-slash:hover {
+  color: #000;
+}
 
 form > label {
     font-size: 12px;

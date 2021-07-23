@@ -11,14 +11,24 @@ const Form = ({
   setConfirmPassword,
   handleSubmit,
   isValid,
-  show,
-  setShow,
+  showPassword,
+  setShowPassword,
+  showConfirmPassword,
+  setShowConfirmPassword,
 }) => {
-  const handleShow = () => {
-    if (!show) {
-      setShow(true);
+  const handleShowPassword = () => {
+    if (!showPassword) {
+      setShowPassword(true);
     } else {
-      setShow(false);
+      setShowPassword(false);
+    }
+  };
+
+  const handleShowConfirmPassword = () => {
+    if (!showConfirmPassword) {
+      setShowConfirmPassword(true);
+    } else {
+      setShowConfirmPassword(false);
     }
   };
 
@@ -51,26 +61,37 @@ const Form = ({
         <input
           required
           className={isValid ? "error" : undefined}
-          type={!show ? "password" : "text"}
+          type={!showPassword ? "password" : "text"}
           name="password"
           id="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <FontAwesomeIcon icon="eye" onClick={handleShow} />
+        {!showPassword ? (
+          <FontAwesomeIcon icon="eye" onClick={handleShowPassword} />
+        ) : (
+          <FontAwesomeIcon icon="eye-slash" onClick={handleShowPassword} />
+        )}
       </div>
 
       <label htmlFor="confirmPassword">Confirm your password</label>
       <div>
         <input
           className={isValid ? "error" : undefined}
-          type={!show ? "password" : "text"}
+          type={!showConfirmPassword ? "password" : "text"}
           name="confirmPassword"
           id="confirmPassword"
           value={confirmPassword}
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
-        <FontAwesomeIcon icon="eye" onClick={handleShow} />
+        {!showConfirmPassword ? (
+          <FontAwesomeIcon icon="eye" onClick={handleShowConfirmPassword} />
+        ) : (
+          <FontAwesomeIcon
+            icon="eye-slash"
+            onClick={handleShowConfirmPassword}
+          />
+        )}
       </div>
 
       {isValid && (

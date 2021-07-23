@@ -3,7 +3,7 @@ import "./assets/css/App.css";
 
 // import
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 //import components
 import Footer from "./components/Footer";
@@ -13,7 +13,7 @@ import Result from "./components/Result";
 // import useState
 import { useState } from "react";
 
-library.add(faEye);
+library.add(faEye, faEyeSlash);
 
 const App = () => {
   const [name, setName] = useState("");
@@ -22,7 +22,8 @@ const App = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [result, setResult] = useState(1);
   const [isValid, setIsValid] = useState(false);
-  const [show, setShow] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,8 +56,10 @@ const App = () => {
             setConfirmPassword={setConfirmPassword}
             handleSubmit={handleSubmit}
             isValid={isValid}
-            show={show}
-            setShow={setShow}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+            showConfirmPassword={showConfirmPassword}
+            setShowConfirmPassword={setShowConfirmPassword}
           />
         ) : result === 2 ? (
           <Result

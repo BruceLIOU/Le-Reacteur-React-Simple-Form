@@ -37,7 +37,7 @@ form input {
     margin: 5px 0 25px;
 }
 
-.fa-eye {
+.fa-eye, .fa-eye-slash {
     position: relative;
     z-index: 1;
     left: -30px;

@@ -36,7 +36,9 @@ form input {
     padding-left: 10px;
     margin: 5px 0 25px;
 }
-
+form input:focus {
+  border: 2px solid #5c47d3;
+}
 .fa-eye, .fa-eye-slash {
     position: relative;
     z-index: 1;
